@@ -78,16 +78,21 @@
 }
 
 .fab-menu > button:nth-child(1) {
-  left: 78px;
-  top: -58px;
+  left: 85px;
+  top: -65px;
 }
 
 .fab-menu > button:nth-child(2) {
-  left: -16px;
-  top: -16px;
+  left: -20px;
+  top: -20px;
 }
 
 .fab-menu > button:nth-child(3) {
-  left: -58px;
-  top: 78px;
+  left: -65px;
+  top: 85px;
+}
+
+.fab-menu > button:nth-child(4) {
+  left: 20px;
+  top: 100px;
 }

@@ -19,9 +19,7 @@ export const Layout = () => {
 
     return numA - numB;
   });
-
   const navigate = useNavigate();
-
   return (
     <main className="layout">
       <header className="layout-header">

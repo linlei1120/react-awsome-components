@@ -1,9 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination } from "swiper/modules";
-import "./styles.css";
+import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
+
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
+import "./Carousel1.css";
 
 import image1 from "./1.jpg";
 import image2 from "./2.jpg";
@@ -13,61 +13,72 @@ import image5 from "./5.jpg";
 
 const slides = [
   {
-    title: "1 Series",
-    image: image1,
+    name: "India",
+    src: image1,
   },
   {
-    title: "2 Series",
-    image: image2,
+    name: "Japan",
+    src: image2,
   },
   {
-    title: "3 Series",
-    image: image3,
+    name: "Scotland",
+    src: image3,
   },
   {
-    title: "4 Series",
-    image: image4,
+    name: "Norway",
+    src: image4,
   },
   {
-    title: "5 Series",
-    image: image5,
+    name: "France",
+    src: image5,
   },
 ];
 
 export const Carousel1 = () => {
   return (
-    <section className="page carousel-1-page">
+    <section className="page carousel-3-page">
       <Swiper
         grabCursor
         centeredSlides
-        slidesPerView={2}
+        slidesPerView="auto"
+        initialSlide={0}
+        speed={600}
         effect="coverflow"
-        loop
+        loop={true}
+        loopAdditionalSlides={3}
+        spaceBetween={30}
+        mousewheel
         pagination={{ clickable: true }}
         coverflowEffect={{
-          rotate: 0,
+          rotate: 50,
           stretch: 0,
           depth: 100,
-          modifier: 3,
+          modifier: 1,
           slideShadows: true,
         }}
-        modules={[Pagination, EffectCoverflow]}
+        modules={[EffectCoverflow, Pagination, Autoplay]}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        }}
       >
-        {slides.map((slide) => (
-          <SwiperSlide
-            key={slide.title}
-            style={{
-              backgroundImage: `url(${slide.image})`,
-            }}
-          >
-            <div>
+        <div className="swiper-wrapper">
+          {slides.map((slide) => (
+            <SwiperSlide
+              key={slide.name}
+              style={{
+                backgroundImage: `url(${slide.src})`,
+              }}
+            >
               <div>
-                <h2>{slide.title}</h2>
+                <h2>{slide.name}</h2>
                 <a>explore</a>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
+            </SwiperSlide>
+          ))}
+        </div>
+        <div className="swiper-pagination"></div>
       </Swiper>
     </section>
   );

@@ -16,13 +16,13 @@ export const FabButton = () => {
         </button>
         <div className="fab-menu">
           <button>
-            <Icon>favorite</Icon>
+            AA
           </button>
           <button>
-            <Icon>sell</Icon>
+            BB
           </button>
           <button>
-            <Icon>settings</Icon>
+            CC
           </button>
         </div>
       </div>

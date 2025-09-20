@@ -1,0 +1,69 @@
+.card1-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.card1 {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card1.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card1-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.card1-icon span {
+  font-size: 24px;
+  color: #333;
+}
+
+.card1-content h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.card1-content p {
+  margin: 0 0 1.5rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.card1-total {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.animated-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2563eb;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  will-change: contents;
+}
+
+.card1-total span {
+  color: #666;
+  font-size: 1rem;
+}
